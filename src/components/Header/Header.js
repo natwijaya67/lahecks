@@ -13,10 +13,7 @@ const headersData = [
         label: "Home", 
         href: "/home", 
     },
-    {
-        label: "About",
-        href: "/about",
-    },
+    
     {
         label: "Buy",
         href: "/buy",
@@ -25,10 +22,7 @@ const headersData = [
         label: "Sell",
         href: "/sell",
     },
-    {
-        label: "Forum",
-        href: "/forum",
-    },
+
     {
         label: "Map",
         href: "/map"
@@ -43,16 +37,16 @@ const useStyles = makeStyles(() => ({
     },
     logo : {
         fontFamily: "Work Sans, sans-serif", 
-        fontWeight: 600, 
+        fontWeight: 900, 
         color: "#FF9900", 
         textAlign: "left",
     },
     menuButton: {
-        fontFamily: "Work Sans, sans-serif",
+        fontFamily: "Open Sans, sans-serif",
         fontWeight: 700,
-        size: "10px",
+        size: "18px",
         color: "#000000",
-        marginLeft: "38px",
+        marginLeft: "20px",
     },
     toolbar: {
         display: "flex",
