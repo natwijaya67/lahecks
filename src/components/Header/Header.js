@@ -37,33 +37,38 @@ const headersData = [
 
 const useStyles = makeStyles(() => ({
     header: {
-        backgroundColor: "#400CCC", 
+        backgroundColor: "#FFE6D9", 
         paddingRight: "79px",
         paddingLeft: "118px",
     },
     logo : {
         fontFamily: "Work Sans, sans-serif", 
         fontWeight: 600, 
-        color: "#FFFEEFE", 
+        color: "#FF9900", 
         textAlign: "left",
     },
     menuButton: {
-        fontFamily: "Open Sans, sans-serif",
+        fontFamily: "Work Sans, sans-serif",
         fontWeight: 700,
-        size: "18px",
+        size: "10px",
+        color: "#000000",
         marginLeft: "38px",
+    },
+    toolbar: {
+        display: "flex",
+        justifyContent: "space-between",
     },
 }));
 
 export default function Header() {
 
-  const { header, logo } = useStyles();
+  const { header, logo, menuButton, toolbar} = useStyles();
 
   const displayDesktop = () => {
     return (
-    <Toolbar>
+    <Toolbar className={toolbar}>
         {curbLogo}
-        {getMenuButtons()}
+        <div>{getMenuButtons()}</div>
         </Toolbar>
     );
   };
@@ -85,6 +90,7 @@ export default function Header() {
                 color: "inherit",
                 to: href,
                 component: RouterLink,
+                className: menuButton
             } }
             >  {label}
             </Button>
