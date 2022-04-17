@@ -1,16 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-import Card from './components/Card'
-import plush from './images/plush1.jpg'
+import Products from './components/Products'
+import React, {useState} from 'react'
+import Popup from './components/Popup'
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+ 
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  }
+  
   return (
     <div className="App">
-      <Card 
-      title = 'Plush Toy'
-      imgURL = {plush}
-      body = 'This is a potato'
-      />
+      <input
+      type="button"
+      value="Add your item here"
+      onClick={togglePopup}
+    />
+    {isOpen && <Popup
+      content={<>
+        <b>Adding new product</b>
+        <p>Please fill in this form to add your product</p>
+        <button>Submit</button>
+      </>}
+      handleClose={togglePopup}
+    />}
+      <Products/>
     </div>
   );
 }
